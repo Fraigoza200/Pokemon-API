@@ -1,3 +1,6 @@
+const pokedex = document.getElementById('pokedex')
+console.log(pokedex)
+
 const fetchPokemon = () => {
   const promises = [];
   for (let i = 1; i < 151; i++) {
@@ -15,6 +18,13 @@ const fetchPokemon = () => {
   });
 };
 const showPokemon = (pokemon) => {
-  console.log(pokemon)
+  const pokemonString = pokemon.map(pokeChar => `
+    <li> 
+      <img src=${pokeChar.image} alt="" />
+      <h2>${pokeChar.id}. ${pokeChar.name}</h2>
+      <p>Type: ${pokeChar.type}</p>
+    </li>
+  `).join('')
+  pokedex.innerHTML = pokemonString
 }
 fetchPokemon();
