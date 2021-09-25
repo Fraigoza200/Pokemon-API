@@ -19,10 +19,10 @@ const fetchPokemon = () => {
 };
 const showPokemon = (pokemon) => {
   const pokemonString = pokemon.map(pokeChar => `
-    <li> 
-      <img src=${pokeChar.image} alt="" />
-      <h2>${pokeChar.id}. ${pokeChar.name}</h2>
-      <p>Type: ${pokeChar.type}</p>
+    <li class="card"> 
+      <img class="card-img" src=${pokeChar.image} alt="" />
+      <h2 class="card-heading">${pokeChar.id}. ${pokeChar.name}</h2>
+      <p class="card-subheading">Type: ${pokeChar.type}</p>
     </li>
   `).join('')
   pokedex.innerHTML = pokemonString
